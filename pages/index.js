@@ -61,8 +61,10 @@ export default function Home({ staticData, staticData2 }) {
       })
       .then(res => {
         setStreamer(res.data)
+        console.log(streamer)
+        return res.data
       })
-      .then(streamer => axios.get(`https://api.twitch.tv/helix/clips?broadcaster_id=${streamer.id}&started_at=2021-12-02T15:04:05Z&first=3`, {
+      .then(streamer => axios.get(`https://api.twitch.tv/helix/clips?broadcaster_id=${streamer.data[0].id}&started_at=2021-12-02T15:04:05Z&first=3`, {
         headers: {
           'Client-ID': 'xe7yonvirsz4ob4vahgs256d6si79q',
           'Authorization': 'Bearer 2nrfe70of4wf2wp3veg6j4chhf9mgp'
