@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: rgb(65, 64, 64);
 }
 
 a {
@@ -13,4 +14,45 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.mainHeader {
+  width: 100%;
+  text-align: center;
+}
+
+.inputSection {
+  display: flex;
+  align-self: center;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.clipsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clipWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clipHeader {
+  display: flex;
+  font-weight: 700;
+  font-size: larger;
+  justify-content: center;
+  text-align: center;
 }
