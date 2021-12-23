@@ -6,17 +6,17 @@ export default function Clips({ clips, staticData2 }) {
         <div className='clipsContainer'>
 
             {clips ? clips.data.map((item) => (
-                <div className='clipWrapper'>
-                    <p>{item.title}</p>
-                    <p>Views: {item.view_count}</p>
-                    <a key={item.id} href={item.url}><Image src={item.thumbnail_url} height={200} width={360} layout="fixed" /></a>
+                <div className='clipWrapper' key={item.id}>
+                    <p className='clipTitle'>{item.title}</p>
+                    <p>Views: {(item.view_count).toLocaleString()}</p>
+                    <a href={item.url} className='clipThumbnail'><Image src={item.thumbnail_url} height={200} width={360} layout="fixed" /></a>
                 </div>
                 
             )) : staticData2.data.map((item) => (
-                <div className='clipWrapper'>
-                    <p>{item.title}</p>
-                    <p>Views: {item.view_count}</p>
-                    <a key={item.id} href={item.url}><Image src={item.thumbnail_url} height={200} width={360} layout="fixed" /></a>
+                <div className='clipWrapper' key={item.id}>
+                    <p className='clipTitle'>{item.title}</p>
+                    <p>Views: {(item.view_count).toLocaleString()}</p>
+                    <a href={item.url} className='clipThumbnail'><Image src={item.thumbnail_url} height={200} width={360} layout="fixed" /></a>
                 </div>
                 
             ))}

@@ -14,12 +14,14 @@ export default function Header({ setStreamerName, inputValue, setInputValue }) {
       <div className="inputSection">
         
         <form onSubmit={handleSubmit}>
-          <label>Streamer Name:</label>
+          
           <input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Enter Streamer Name"
+            className='inputField'
           />
-          <button type='submit'>Submit</button>
+          <button type="submit"><i class="icon ion-android-arrow-forward"></i></button>
         </form>
       </div>
     </div>
