@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
+
 
 export default function Header({ setStreamerName, inputValue, setInputValue }) {
   
@@ -13,7 +15,7 @@ export default function Header({ setStreamerName, inputValue, setInputValue }) {
         <h1 className="mainHeader">Twitch Check-In</h1>
       <div className="inputSection">
         
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='formWrapper'>
           
           <input
             value={inputValue}
@@ -21,7 +23,7 @@ export default function Header({ setStreamerName, inputValue, setInputValue }) {
             placeholder="Enter Streamer Name"
             className='inputField'
           />
-          <button type="submit"><i class="icon ion-android-arrow-forward"></i></button>
+          <button type="submit" className="searchButton"><i><FaArrowRight className='searchArrow'/></i></button>
         </form>
       </div>
     </div>

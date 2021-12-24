@@ -1,15 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Noto Sans JP, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Noto Sans JP, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: rgb(24, 23, 23);
   color: white;
+}
 
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+input {
+  border-style: none;
+  background: transparent;
+  outline: none;
 }
 
 a {
@@ -28,39 +38,63 @@ a {
 
 .inputSection {
   display: flex;
-  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.formWrapper {
   position: relative;
+  display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   margin: 0 auto;
   border-radius: 2px;
-  padding: 1.4rem 2rem 1.6rem;
+
+  justify-content: center;
+  padding-bottom: 0;
 }
 
 .inputField {
   background: rgba(57, 63, 84, 0.8);
   flex-grow: 1;
-  font-size: 1.8rem;
+  font-size: 1rem;
   line-height: 2.4rem;
+  padding-left: 1rem;
 }
 
-.inputSection::after {
-  
-    content: "";
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: 999;
-    height: 2px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-    background-position: 0% 0%;
-    background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
-    background-size: 500% auto;
-    animation: gradient 3s linear infinite;
-  
+.searchButton {
+  background: rgba(57, 63, 84, 0.8);
+  width: 12%;
+}
+
+.formWrapper::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  height: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-position: 0% 0%;
+  background: linear-gradient(
+    to right,
+    #b294ff,
+    #57e6e6,
+    #feffb8,
+    #57e6e6,
+    #b294ff,
+    #57e6e6
+  );
+  background-size: 500% auto;
+  animation: gradient 3s linear infinite;
+}
+
+.searchArrow {
+  color: white;
+  font-size: 1.5rem;
 }
 
 .headerContainer {
@@ -84,7 +118,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .clipTitle {
@@ -104,14 +137,20 @@ a {
 }
 
 .clipThumbnail {
-  box-shadow: rgba(88, 46, 240, 0.4) -5px 5px, rgba(104, 46, 240, 0.3) -10px 10px, rgba(98, 46, 240, 0.2) -15px 15px, rgba(114, 46, 240, 0.1) -20px 20px, rgba(82, 46, 240, 0.05) -25px 25px;
+  box-shadow: rgba(88, 46, 240, 0.4) -5px 5px,
+    rgba(104, 46, 240, 0.3) -10px 10px, rgba(98, 46, 240, 0.2) -15px 15px,
+    rgba(114, 46, 240, 0.1) -20px 20px, rgba(82, 46, 240, 0.05) -25px 25px;
 }
 
 .profileImage {
   border-radius: 50%;
 }
 
-@keyframes gradient { 
-  0%{background-position:0 0}
-  100%{background-position:100% 0}
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
