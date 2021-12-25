@@ -50,7 +50,6 @@ a {
   max-width: 350px;
   margin: 0 auto;
   border-radius: 2px;
-
   justify-content: center;
   padding-bottom: 0;
 }
@@ -61,6 +60,7 @@ a {
   font-size: 1rem;
   line-height: 2.4rem;
   padding-left: 1rem;
+  color: white;
 }
 
 .searchButton {
@@ -140,6 +140,13 @@ a {
   box-shadow: rgba(88, 46, 240, 0.4) -5px 5px,
     rgba(104, 46, 240, 0.3) -10px 10px, rgba(98, 46, 240, 0.2) -15px 15px,
     rgba(114, 46, 240, 0.1) -20px 20px, rgba(82, 46, 240, 0.05) -25px 25px;
+    
+}
+
+.imageWrapper {
+  position: relative;
+  width: 360px;
+    height: 200px;
 }
 
 .profileImage {
@@ -152,5 +159,26 @@ a {
   }
   100% {
     background-position: 100% 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .mainHeader {
+    text-align: left;
+    padding-left: 2rem;
+  }
+
+  .inputSection {
+    margin-left: 70%;
+  }
+
+  .clipImage {
+    width: 600px;
+    height: 600px;
+  }
+
+  .imageWrapper {
+    width: 720px;
+    height: 400px;
   }
 }

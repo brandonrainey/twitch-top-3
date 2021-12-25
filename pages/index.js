@@ -43,7 +43,7 @@ export default function Home({ staticData, staticData2 }) {
       : null;
   }, [streamerName]);
 
-  console.log(staticData)
+  console.log(clips)
   return (
     <div>
       <Header
@@ -61,22 +61,21 @@ export default function Home({ staticData, staticData2 }) {
       <section className="main">
         {streamer ? (
           <a href={`https://twitch.tv/${streamer.data[0].login}`}>
-          <Image
-            src={streamer.data[0].profile_image_url}
-            height={100}
-            width={100}
-            className="profileImage"
-            
-          />
+            <Image
+              src={streamer.data[0].profile_image_url}
+              height={100}
+              width={100}
+              className="profileImage"
+            />
           </a>
         ) : (
           <a href={`https://twitch.tv/${staticData.data[0].login}`}>
-          <Image
-            src={staticData.data[0].profile_image_url}
-            height={100}
-            width={100}
-            className="profileImage"
-          />
+            <Image
+              src={staticData.data[0].profile_image_url}
+              height={100}
+              width={100}
+              className="profileImage"
+            />
           </a>
         )}
       </section>
