@@ -43,7 +43,7 @@ export default function Home({ staticData, staticData2 }) {
       : null;
   }, [streamerName]);
 
-  console.log(clips)
+  
   return (
     <div>
       <Header
