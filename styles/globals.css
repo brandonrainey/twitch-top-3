@@ -125,6 +125,15 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  width: 100%;
+  padding-bottom: 50px;
+  padding-top: -40px;
+  background:rgba(88, 46, 240, 0.1)
+}
+
+.odd {
+  background:rgba(46, 211, 240, 0.1)
 }
 
 .clipTitle {
@@ -141,6 +150,12 @@ a {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.headerName {
+  font-style: italic;
+  font-size: 30px;
 }
 
 .clipThumbnail {
@@ -180,12 +195,16 @@ a {
 
 .liveText {
   margin-top: 10px;
+  margin-bottom: 10px;
   color: green;
+  font-weight: 600;
 }
 
 .offlineText {
   margin-top: 10px;
+  margin-bottom: 10px;
   color: red;
+  font-weight: 600;
 }
 
 @keyframes gradient {
