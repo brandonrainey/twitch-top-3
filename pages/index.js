@@ -11,6 +11,8 @@ export default function Home({ staticData, staticData2 }) {
   const [streamerName, setStreamerName] = useState();
   const [loading, setLoading] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [streamerInfo, setStreamerInfo] = useState()
+  const [streamerData, setStreamerData] = useState()
 
   useEffect(() => {
     streamerName
@@ -23,9 +25,9 @@ export default function Home({ staticData, staticData2 }) {
           })
           .then((res) => {
             setStreamer(res.data);
-            console.log(streamer);
             return res.data;
           })
+          
           .then((streamer) =>
             axios.get(
               `https://api.twitch.tv/helix/clips?broadcaster_id=${streamer.data[0].id}&started_at=2021-12-02T15:04:05Z&first=3`,
@@ -39,6 +41,23 @@ export default function Home({ staticData, staticData2 }) {
           )
           .then((res) => {
             setClips(res.data);
+          })
+          .then(() =>
+            axios.get(
+              `https://api.twitch.tv/helix/search/channels?query=${streamerName}`,
+              {
+                headers: {
+                  "Client-ID": "xe7yonvirsz4ob4vahgs256d6si79q",
+                  Authorization: "Bearer 2nrfe70of4wf2wp3veg6j4chhf9mgp",
+                },
+              }
+            )
+          )
+          .then((res) => {
+            const newData = res.data
+            
+            const filteredData = newData.data.filter((item) => item.broadcaster_login === streamerName)
+            setStreamerInfo(filteredData)
           })
       : null;
   }, [streamerName]);
@@ -55,29 +74,34 @@ export default function Home({ staticData, staticData2 }) {
       <div className="clipHeader">
         Top 3 Clips <br />
         From <br />
-        {streamer ? streamer.data[0].display_name : null}
+        {streamer ? streamer.data[0].display_name : null} <br />
+        
       </div>
 
       <section className="main">
         {streamer ? (
-          <a href={`https://twitch.tv/${streamer.data[0].login}`}>
+          <a href={`https://twitch.tv/${streamer.data[0].login}`} className={`imageLink ${streamerInfo ? streamerInfo[0].is_live == true ? 'glow' : 'Offline' : null}`}>
             <Image
               src={streamer.data[0].profile_image_url}
-              height={100}
-              width={100}
-              className="profileImage"
+              
+              layout="fill" 
+
+              className={`profileImage `}
             />
           </a>
         ) : (
-          <a href={`https://twitch.tv/${staticData.data[0].login}`}>
+          <a href={`https://twitch.tv/${staticData.data[0].login}` } className='imageLink'>
             <Image
               src={staticData.data[0].profile_image_url}
-              height={100}
-              width={100}
+              layout="fill" 
               className="profileImage"
             />
           </a>
         )}
+        <div className={`${streamerInfo ? streamerInfo[0].is_live == true ? 'liveText' : 'offlineText' : null}`}>
+          {streamerInfo ? streamerInfo[0].is_live == true ? 'Live' : 'Offline' : null}
+        </div>
+        
       </section>
       <Clips clips={clips} staticData2={staticData2} />
     </div>

@@ -10,12 +10,16 @@ export default function Clips({ clips, staticData2 }) {
               <p className="clipTitle">{item.title}</p>
               <p>Views: {item.view_count.toLocaleString()}</p>
               <a href={item.url} className="clipThumbnail">
-                <Image
+                <div className="imageWrapper">
+                  <Image
                   src={item.thumbnail_url}
                   height={200}
                   width={360}
-                  layout="fixed"
+                  layout="responsive"
+                  className="clipImage"
                 />
+                </div>
+                
               </a>
             </div>
           ))
