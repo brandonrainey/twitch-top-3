@@ -17,6 +17,7 @@ export default function Clips({ clips, staticData2 }) {
                   width={360}
                   layout="responsive"
                   className="clipImage"
+                  priority='true'
                 />
                 </div>
                 
@@ -35,6 +36,7 @@ export default function Clips({ clips, staticData2 }) {
                   width={360}
                   layout="responsive"
                   className="clipImage"
+                  priority='true'
                 />
                 </div>
                 
