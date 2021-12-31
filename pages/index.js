@@ -27,6 +27,9 @@ export default function Home({ staticData, staticData2 }) {
             setStreamer(res.data);
             return res.data;
           })
+          .catch((error) => {
+            console.log(error)
+          })
 
           .then((streamer) =>
             axios.get(
@@ -41,6 +44,9 @@ export default function Home({ staticData, staticData2 }) {
           )
           .then((res) => {
             setClips(res.data);
+          })
+          .catch((error) => {
+            console.log(error)
           })
           .then(() =>
             axios.get(
@@ -61,8 +67,13 @@ export default function Home({ staticData, staticData2 }) {
             );
             setStreamerInfo(filteredData);
           })
+          .catch((error) => {
+            console.log(error)
+          })
       : null;
   }, [streamerName]);
+
+  console.log(clips)
 
   return (
     <div>
