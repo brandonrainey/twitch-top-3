@@ -4,6 +4,7 @@ import Image from "next/image";
 import axios from "axios";
 import Header from "../components/Header";
 import Clips from "../components/Clips";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 export default function Home({ staticData, staticData2 }) {
   const [clips, setClips] = useState();
@@ -73,7 +74,7 @@ export default function Home({ staticData, staticData2 }) {
       : null;
   }, [streamerName]);
 
-  console.log(clips)
+ 
 
   return (
     <div>
@@ -103,11 +104,13 @@ export default function Home({ staticData, staticData2 }) {
                 : null
             }`}
           >
-            <Image
-              src={streamer.data[0].profile_image_url}
-              layout="fill"
-              className={`profileImage `}
-            />
+            <ErrorBoundary >
+              <Image
+                src={streamer.data[0].profile_image_url}
+                layout="fill"
+                className={`profileImage `}
+              />
+            </ErrorBoundary>
           </a>
         ) : (
           <a
