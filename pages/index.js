@@ -78,11 +78,14 @@ export default function Home({ staticData, staticData2 }) {
 
   return (
     <div>
-      <Header
+      <ErrorBoundary >
+        <Header
         setStreamerName={setStreamerName}
         inputValue={inputValue}
         setInputValue={setInputValue}
       />
+      </ErrorBoundary>
+      
 
       <div className="clipHeader">
         Top 3 Recent Clips <br />
@@ -117,11 +120,14 @@ export default function Home({ staticData, staticData2 }) {
             href={`https://twitch.tv/${staticData.data[0].login}`}
             className="imageLink"
           >
-            <Image
+            <ErrorBoundary >
+              <Image
               src={staticData.data[0].profile_image_url}
               layout="fill"
               className="profileImage"
             />
+            </ErrorBoundary>
+            
           </a>
         )}
         <div
@@ -140,7 +146,10 @@ export default function Home({ staticData, staticData2 }) {
             : null}
         </div>
       </section>
-      <Clips clips={clips} staticData2={staticData2} />
+      <ErrorBoundary >
+        <Clips clips={clips} staticData2={staticData2} />
+      </ErrorBoundary>
+      
     </div>
   );
 }
