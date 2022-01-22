@@ -15,6 +15,10 @@ export default function Home({ staticData, staticData2 }) {
   const [streamerInfo, setStreamerInfo] = useState();
   const [streamerData, setStreamerData] = useState();
 
+  const today = new Date()
+  const lastWeek = new Date(today.setDate(today.getDate() - 7))
+  const formattedDate = lastWeek.toISOString()
+
   useEffect(() => {
     streamerName
       ? axios
@@ -34,7 +38,7 @@ export default function Home({ staticData, staticData2 }) {
 
           .then((streamer) =>
             axios.get(
-              `https://api.twitch.tv/helix/clips?broadcaster_id=${streamer.data[0].id}&started_at=2021-12-02T15:04:05Z&first=3`,
+              `https://api.twitch.tv/helix/clips?broadcaster_id=${streamer.data[0].id}&started_at=${formattedDate}&first=3`,
               {
                 headers: {
                   "Client-ID": "xe7yonvirsz4ob4vahgs256d6si79q",
@@ -163,7 +167,7 @@ export const getStaticProps = async () => {
   });
 
   const res2 = await fetch(
-    "https://api.twitch.tv/helix/clips?broadcaster_id=94753024&started_at=2021-12-02T15:04:05Z&first=3",
+    `https://api.twitch.tv/helix/clips?broadcaster_id=94753024&started_at=2021-12-02T15:04:05Z&first=3`,
     {
       headers: {
         "Client-ID": "xe7yonvirsz4ob4vahgs256d6si79q",
