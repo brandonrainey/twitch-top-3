@@ -9,7 +9,7 @@ export default function Header({ setStreamerName, inputValue, setInputValue }) {
 
   return (
     <div className="headerContainer">
-      <h1 className="mainHeader">Twitch Check-In</h1>
+      <h1 className="mainHeader">Twitch Top 3</h1>
       <div className="inputSection">
         <form onSubmit={handleSubmit} className="formWrapper">
           <input

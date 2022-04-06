@@ -163,7 +163,7 @@ export const getStaticProps = async () => {
   })
 
   const res2 = await fetch(
-    `https://api.twitch.tv/helix/clips?broadcaster_id=94753024&started_at=2021-12-02T15:04:05Z&first=3`,
+    `https://api.twitch.tv/helix/clips?broadcaster_id=94753024&started_at=2022-03-29T15:04:05Z&first=3`,
     {
       headers: {
         'Client-ID': 'xe7yonvirsz4ob4vahgs256d6si79q',
