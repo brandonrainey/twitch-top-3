@@ -25,7 +25,7 @@ export default function Home({ staticData, staticData2 }) {
           .get(`https://api.twitch.tv/helix/users?login=${streamerName}`, {
             headers: {
               'Client-ID': 'xe7yonvirsz4ob4vahgs256d6si79q',
-              Authorization: 'Bearer y7ky0ocbrcj2elmahlox7q23yky3jx',
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_TWITCH_KEY}`,
             },
           })
           .then((res) => {
@@ -42,7 +42,7 @@ export default function Home({ staticData, staticData2 }) {
               {
                 headers: {
                   'Client-ID': 'xe7yonvirsz4ob4vahgs256d6si79q',
-                  Authorization: 'Bearer y7ky0ocbrcj2elmahlox7q23yky3jx',
+                  Authorization: `Bearer ${process.env.NEXT_PUBLIC_TWITCH_KEY}`,
                 },
               }
             )
@@ -59,7 +59,7 @@ export default function Home({ staticData, staticData2 }) {
               {
                 headers: {
                   'Client-ID': 'xe7yonvirsz4ob4vahgs256d6si79q',
-                  Authorization: 'Bearer y7ky0ocbrcj2elmahlox7q23yky3jx',
+                  Authorization: `Bearer ${process.env.NEXT_PUBLIC_TWITCH_KEY}`,
                 },
               }
             )
@@ -78,7 +78,7 @@ export default function Home({ staticData, staticData2 }) {
       : null
   }, [streamerName])
 
-  console.log(clips)
+  console.log(streamer)
   return (
     <div>
       <ErrorBoundary>
@@ -155,19 +155,19 @@ export default function Home({ staticData, staticData2 }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://api.twitch.tv/helix/users?login=mizkif', {
+  const res = await fetch('https://api.twitch.tv/helix/users?login=shroud', {
     headers: {
       'Client-ID': 'xe7yonvirsz4ob4vahgs256d6si79q',
-      Authorization: 'Bearer y7ky0ocbrcj2elmahlox7q23yky3jx',
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_TWITCH_KEY}`,
     },
   })
 
   const res2 = await fetch(
-    `https://api.twitch.tv/helix/clips?broadcaster_id=94753024&started_at=2022-03-29T15:04:05Z&first=3`,
+    `https://api.twitch.tv/helix/clips?broadcaster_id=37402112&started_at=2022-03-29T15:04:05Z&first=3`,
     {
       headers: {
         'Client-ID': 'xe7yonvirsz4ob4vahgs256d6si79q',
-        Authorization: 'Bearer y7ky0ocbrcj2elmahlox7q23yky3jx',
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TWITCH_KEY}`,
       },
     }
   )
