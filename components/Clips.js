@@ -31,7 +31,7 @@ export default function Clips({ clips, staticData2 }) {
               <a href={item.url} className="clipThumbnail">
                 <div className="imageWrapper">
                   <Image
-                  src={item.thumbnail_url}
+                  src={`${item.thumbnail_url ? item.thumbnail_url : '/errorImage.png'}`}
                   height={200}
                   width={360}
                   layout="responsive"
