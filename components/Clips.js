@@ -29,11 +29,11 @@ export default function Clips({ clips, staticData2 }) {
               <p className="clipTitle">{item.title}</p>
               <p>Views: {item.view_count.toLocaleString()}</p>
               <a href={item.url} className="clipThumbnail">
-                <div className="imageWrapper">
+                <div className="imageWrapper ">
                   <img
                   src={`${item.thumbnail_url ? item.thumbnail_url : '/errorImage.png'}`}
-                  height={200}
-                  width={360}
+                  height={190}
+                  width={342}
                   
                   className="clipImage"
                   priority='true'

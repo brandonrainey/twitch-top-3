@@ -119,6 +119,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .clipWrapper {
@@ -140,6 +141,7 @@ a {
   margin-bottom: 0;
   margin-top: 60px;
   font-weight: bold;
+  text-align: center;
 }
 
 .clipHeader {
@@ -160,15 +162,13 @@ a {
 }
 
 .clipThumbnail {
-  box-shadow: rgba(88, 46, 240, 0.4) -5px 5px,
-    rgba(104, 46, 240, 0.3) -10px 10px, rgba(98, 46, 240, 0.2) -15px 15px,
-    rgba(114, 46, 240, 0.1) -20px 20px, rgba(82, 46, 240, 0.05) -25px 25px;
+  box-shadow: rgba(65, 46, 240, 0.4) 0px 5px, rgba(114, 46, 240, 0.3) 0px 10px, rgba(120, 46, 240, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(104, 46, 240, 0.05) 0px 25px;
 }
 
 .imageWrapper {
   position: relative;
-  width: 360px;
-  height: 200px;
+  width: 342px;
+  height: 190px;
   border-radius: 5px;
   
 }
