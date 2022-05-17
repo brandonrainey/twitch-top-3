@@ -4,7 +4,7 @@ import Image from 'next/image'
 import axios from 'axios'
 import Header from '../components/Header'
 import Clips from '../components/Clips'
-import ErrorBoundary from '../components/ErrorBoundary'
+
 
 export default function Home({ staticData, staticData2 }) {
   const [clips, setClips] = useState()
@@ -78,22 +78,22 @@ export default function Home({ staticData, staticData2 }) {
       : null
   }, [streamerName])
 
-  console.log(streamer)
+  console.log(staticData)
   return (
     <div>
-      <ErrorBoundary>
+      
         <Header
           setStreamerName={setStreamerName}
           inputValue={inputValue}
           setInputValue={setInputValue}
         />
-      </ErrorBoundary>
+      
 
       <div className="clipHeader">
         Top 3 Recent Clips <br />
         From <br />
         <div className="headerName">
-          {streamer ? streamer.data[0].display_name : null} <br />
+          {streamer ? streamer.data[0].display_name : staticData.data[0].display_name} <br />
         </div>
       </div>
 
@@ -109,26 +109,26 @@ export default function Home({ staticData, staticData2 }) {
                 : null
             }`}
           >
-            <ErrorBoundary>
+            
               <Image
                 src={streamer.data[0].profile_image_url}
                 layout="fill"
                 className={`profileImage `}
               />
-            </ErrorBoundary>
+            
           </a>
         ) : (
           <a
             href={`https://twitch.tv/${staticData.data[0].login}`}
             className="imageLink"
           >
-            <ErrorBoundary>
+            
               <Image
                 src={staticData.data[0].profile_image_url}
                 layout="fill"
                 className="profileImage"
               />
-            </ErrorBoundary>
+            
           </a>
         )}
         <div
@@ -147,9 +147,9 @@ export default function Home({ staticData, staticData2 }) {
             : null}
         </div>
       </section>
-      <ErrorBoundary>
+      
         <Clips clips={clips} staticData2={staticData2} />
-      </ErrorBoundary>
+      
     </div>
   )
 }
