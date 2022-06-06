@@ -130,11 +130,11 @@ a {
   width: 100%;
   padding-bottom: 50px;
   padding-top: -40px;
-  background: rgba(88, 46, 240, 0.1);
+  background: rgba(7, 6, 39, 0.486);
 }
 
 .odd {
-  background: rgba(46, 211, 240, 0.1);
+  background: rgb(2, 4, 26);
 }
 
 .clipTitle {

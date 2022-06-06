@@ -78,7 +78,7 @@ export default function Home({ staticData, staticData2 }) {
       : null
   }, [streamerName])
 
-  console.log(staticData)
+  
   return (
     <div>
       
@@ -114,6 +114,8 @@ export default function Home({ staticData, staticData2 }) {
                 src={streamer.data[0].profile_image_url}
                 layout="fill"
                 className={`profileImage `}
+                placeholder='blur'
+                blurDataURL={streamer.data[0].profile_image_url}
               />
             
           </a>
@@ -163,7 +165,7 @@ export const getStaticProps = async () => {
   })
 
   const res2 = await fetch(
-    `https://api.twitch.tv/helix/clips?broadcaster_id=37402112&started_at=2022-03-29T15:04:05Z&first=3`,
+    `https://api.twitch.tv/helix/clips?broadcaster_id=37402112&started_at=2022-06-01T15:04:05Z&first=3`,
     {
       headers: {
         'Client-ID': 'xe7yonvirsz4ob4vahgs256d6si79q',
