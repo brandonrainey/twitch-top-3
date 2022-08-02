@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: Noto Sans JP, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background: rgb(24, 23, 23);
+  background: rgb(80, 0, 133);
   color: white;
 }
 
@@ -130,11 +130,18 @@ a {
   width: 100%;
   padding-bottom: 50px;
   padding-top: -40px;
-  background: rgba(7, 6, 39, 0.486);
+  background: rgb(42, 0, 69);
 }
 
 .odd {
-  background: rgb(2, 4, 26);
+  background: rgb(42, 0, 69);
+}
+
+.transitionBar {
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(180deg, hsla(276, 100%, 26%, 1) 0%, hsla(277, 100%, 14%, 1) 100%);
+
 }
 
 .clipTitle {
@@ -142,22 +149,28 @@ a {
   margin-top: 60px;
   font-weight: bold;
   text-align: center;
+  background:rgb(34, 35, 39);
+  padding: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 10px;
 }
 
 .clipHeader {
   display: flex;
   font-weight: 700;
-  font-size: larger;
+  font-size: x-large;
   justify-content: center;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 20px;
   flex-direction: column;
+  
 }
 
 .headerName {
   font-style: italic;
-  font-size: 30px;
+  font-size: 40px;
   
 }
 

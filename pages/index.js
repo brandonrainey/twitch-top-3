@@ -79,6 +79,7 @@ export default function Home({ staticData, staticData2 }) {
   }, [streamerName])
 
   
+  
   return (
     <div>
       
@@ -93,7 +94,7 @@ export default function Home({ staticData, staticData2 }) {
         Top 3 Recent Clips <br />
         From <br />
         <div className="headerName">
-          {streamer ? streamer.data[0].display_name : staticData.data[0].display_name} <br />
+          {streamer ? streamer.data[0].display_name : 'shroud'} <br />
         </div>
       </div>
 
@@ -149,6 +150,7 @@ export default function Home({ staticData, staticData2 }) {
             : null}
         </div>
       </section>
+      <div className='transitionBar'></div>
       
         <Clips clips={clips} staticData2={staticData2} />
       
@@ -165,7 +167,7 @@ export const getStaticProps = async () => {
   })
 
   const res2 = await fetch(
-    `https://api.twitch.tv/helix/clips?broadcaster_id=37402112&started_at=2022-06-01T15:04:05Z&first=3`,
+    `https://api.twitch.tv/helix/clips?broadcaster_id=37402112&started_at=2022-07-22T15:04:05Z&first=3`,
     {
       headers: {
         'Client-ID': 'xe7yonvirsz4ob4vahgs256d6si79q',
